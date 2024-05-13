@@ -76,12 +76,13 @@ function Test() {
         <input type="number" value={questionCount} onChange={handleChangeQuestionCount} style={{ marginLeft: '10px' }} />
       </label>
       <p style={{ marginTop: '20px' }}>Soru {currentQuestionIndex + 1} / {words.length}</p>
-      <p style={{ fontSize: '20px', fontWeight: 'bold' }}>{(words[currentQuestionIndex] as { english: string }).english}</p>
+      <img src={(words[currentQuestionIndex] as {image: string}).image} alt="Word" style={{ width: '200px', height: '200px', objectFit: 'cover', marginTop: '20px' }} />
+      <p style={{ fontSize: '20px', fontWeight: 'bold' }}>{`${(words[currentQuestionIndex] as { english: string }).english}`}</p>
       <input type="text" value={userAnswer} onChange={handleChangeAnswer} style={{ marginTop: '20px', marginBottom: '20px' }} />
       <button onClick={handleNextQuestion} className="btn btn-primary">Sonraki Soru</button>
-      <Link to="/Main" className='btn btn-primary' style={{ color: 'white', marginTop: '20px', textDecoration: 'none'  }}>Anasayfa</Link>
+      <Link to="/Main" className='btn btn-primary' style={{ color: 'white', marginTop: '20px', textDecoration: 'none' }}>Anasayfa</Link>
     </div>
-  );
+  );  
 }
 
 export default Test;
