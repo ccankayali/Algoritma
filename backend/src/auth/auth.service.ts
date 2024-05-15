@@ -39,10 +39,12 @@ export class AuthService {
         }
     }
 
+    // Tasarlanmadı
     async logout(): Promise<any> {
         return { message: 'Çıkış başarılı' };
     }
 
+    // Forgot Password kısmı için tasarlandı fakat kullanıma açılmadı
     async generateTemporaryPassword(length: number = 8): Promise<string> {
         const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         let temporaryPassword = '';

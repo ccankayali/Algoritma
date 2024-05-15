@@ -8,7 +8,7 @@ function Test() {
   const [userAnswer, setUserAnswer] = useState('');
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [questionCount, setQuestionCount] = useState(1); // Default olarak 10 soru
+  const [questionCount, setQuestionCount] = useState(1);
 
   useEffect(() => {
     async function fetchWords() {

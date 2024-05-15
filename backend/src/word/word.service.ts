@@ -52,7 +52,7 @@ export class WordService {
         ]);
     }
     
-
+    // Doğruluk
     async checkAndCorrectAnswer(id: string, userAnswer: any): Promise<Word | null> {
         const word = await this.wordModel.findById(id);
         if (!word) {
@@ -66,6 +66,7 @@ export class WordService {
         return word;
     }
 
+    // Doğru cevap sayısını artırma
     async increaseCorrectAnswers(id: string, userAnswer: any): Promise<Word> {
         const word = await this.wordModel.findById(id);
         if (!word) {
@@ -82,6 +83,7 @@ export class WordService {
         return word.save();
     }
 
+    // Kelime analiz işlemi
     async getAnalysis(): Promise<any[]> {
         const totalWords = await this.wordModel.countDocuments();
         const knownWords = await this.wordModel.countDocuments({ isKnown: true });

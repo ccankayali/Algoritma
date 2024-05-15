@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class Word extends Document {
-
+    // Kullanıcında olacak verilerin doğrulaması
     @Prop({ required: true })
     english: string;
 

@@ -26,7 +26,7 @@ function AnalysisReport() {
 
     async function printAnalysisReport() {
         try {
-            window.print(); // Trigger the browser's print dialog
+            window.print();
         } catch (error) {
             console.error('Error printing analysis report:', error);
         }

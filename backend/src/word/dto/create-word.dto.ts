@@ -1,7 +1,7 @@
 import { IsBoolean, IsNotEmpty, IsNumber, IsString, IsUrl } from 'class-validator';
 
 export class CreateWordDto {
-
+    // Kullanıcıdan alınacak verilerin doğrulaması
     @IsNotEmpty()
     @IsString()
     english: string;

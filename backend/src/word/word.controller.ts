@@ -35,16 +35,14 @@ export class WordController {
         return this.wordService.test(questionCount);
     }
 
-    // Test Kontrol
-    // correctAnswer kısmını arttırmak (PUT)
-    // word/test/check kısmında cevap doğruluğunu döndürebildim
-    // ben de burada doğru cevap verildiğinde correctAnswer'ı arttırmak istiyorum
+    // Test işlemi ve doğru cevap sayısını artırma endpointi
     @Post('/word/test/check')
     async checkAndIncreaseCorrectAnswers(@Body() body: any): Promise<any> {
         const { id, userAnswer } = body;
         return this.wordService.increaseCorrectAnswers(id, userAnswer);
     }
 
+    // Kelime bilgilerini güncelleme endpointi
     @Get('/word/analysis')
     async getAnalysis(@Res() res) {
         const analysisData = await this.wordService.getAnalysis();

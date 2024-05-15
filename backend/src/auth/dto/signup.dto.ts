@@ -6,6 +6,7 @@ import {
   } from 'class-validator';
   
   export class SignUpDto {
+    // Kullanıcıdan alınacak verilerin doğrulaması
     @IsNotEmpty()
     @IsString()
     readonly name: string;

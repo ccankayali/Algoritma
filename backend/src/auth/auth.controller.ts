@@ -7,6 +7,9 @@ import { SignInDto } from "./dto/signin.dto";
 export class AuthController {
     constructor(private authService: AuthService) {}
     
+
+    // Gerekli Endpointlerin Kurulumu
+
     @Post('/signup')
     async signUp(@Body() signUpDto: SignUpDto) {
         return await this.authService.signUp(signUpDto);

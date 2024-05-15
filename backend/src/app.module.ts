@@ -5,8 +5,9 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { WordModule } from './word/word.module';
-import { CorsMiddleware } from './cors.middleware'; // CORS middleware'ini ekleyin
+import { CorsMiddleware } from './cors.middleware';
 
+// BU DOSYA PROJENİN CORE DOSYASIDIR ELLEMEYİNİZ
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost/Algoritma'),
@@ -19,7 +20,7 @@ import { CorsMiddleware } from './cors.middleware'; // CORS middleware'ini ekley
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
-      .apply(CorsMiddleware) // CORS middleware'i uygula
-      .forRoutes({ path: '*', method: RequestMethod.ALL }); // Tüm istekler için CORS başlıklarını ekle
+      .apply(CorsMiddleware)
+      .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
 }
