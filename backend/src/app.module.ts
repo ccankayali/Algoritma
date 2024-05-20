@@ -23,4 +23,5 @@ export class AppModule {
       .apply(CorsMiddleware)
       .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
+  
 }
